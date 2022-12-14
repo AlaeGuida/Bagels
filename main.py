@@ -24,7 +24,7 @@ def add_num():                  #we create this function to generate 3 random nu
 
 max_guesses = 10        #we set max guesses to 10
 
-note="""I am thinking of a 3-digit number. Try to guess what it is PS: there's no repeating digits.
+note = """I am thinking of a 3-digit number. Try to guess what it is PS: there's no repeating digits.
 Here are some clues:
 When I say: That means:
     Pico        One digit is correct but in the wrong position.
