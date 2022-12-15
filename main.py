@@ -24,18 +24,19 @@ def add_num():                  #we create this function to generate 3 random nu
 
 max_guesses = 10        #we set max guesses to 10
 
-note = """I am thinking of a 3-digit number. Try to guess what it is PS: there's no repeating digits.
-Here are some clues:
-When I say: That means:
-    Pico        One digit is correct but in the wrong position.
-    Fermi       One digit is correct and in the right position.
-    Bagels      No digit is correct.
-I have thought up a number.
- You have 10 guesses to get it. Good luck!
-"""
-
-def guess():    
+def note():
+    note = """I am thinking of a 3-digit number. Try to guess what it is PS: there's no repeating digits.
+    Here are some clues:
+    When I say: That means:
+        Pico        One digit is correct but in the wrong position.
+        Fermi       One digit is correct and in the right position.
+        Bagels      No digit is correct.
+    I have thought up a number.
+    You have 10 guesses to get it. Good luck!
+    """
     print(note, end=" ")
+
+def guess():
     u = 0
     n = 0
     guessed = False
@@ -46,7 +47,7 @@ def guess():
         
         print(f"\nGuess #{guesses}")
         global user_input
-        user_input = str(input())
+        user_input = str(input('> '))
         if user_input.isdigit() and len(user_input) == 3 and isUnique(user_input) is True:      #user input should respect this guidelines to play the game
             if user_input == random_digits:
                 print("You got it!")
@@ -75,7 +76,7 @@ def guess():
     if guessed != True:
         print(f"\nYou lost! the lucky number was: {random_digits}")
     print("\nDo you want to play again? (yes or no)")
-    play_again = input()
+    play_again = input('> ')
     if play_again == 'yes':
         lucky_num.clear()       #we use built-in func clear() to clear value of lucky_num var so we make sure old 3-digit number are gone, cuz we need a new 3-digit number.
         add_num()
@@ -85,4 +86,5 @@ def guess():
         pass
 
 add_num()
+note()
 guess()
